@@ -13,8 +13,12 @@ function Airplane(name) {
   this.name = name;
   this.isFlying = false;
 }
-Airplane.prototype.takeOff = function() { this.isFlying = true; };
-Airplane.prototype.land = function() { this.isFlying = false; };
+Airplane.prototype.takeOff = function () {
+  this.isFlying = true;
+};
+Airplane.prototype.land = function () {
+  this.isFlying = false;
+};
 
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -43,15 +47,19 @@ function Person(name, age) {
   this.stomach = [];
 }
 
-Person.prototype.eat = function(edible) {
+Person.prototype.eat = function (edible) {
   if (edible && this.stomach.length < 10) {
     this.stomach.push(edible);
   }
 };
 
-Person.prototype.poop = function() { this.stomach = []; };
+Person.prototype.poop = function () {
+  this.stomach = [];
+};
 
-Person.prototype.toString = function() { return `${this.name}, ${this.age}`; };
+Person.prototype.toString = function () {
+  return `${this.name}, ${this.age}`;
+};
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from
@@ -78,7 +86,7 @@ function Car(model, milesPerGallon) {
   this.odometer = 0;
 }
 
-Car.prototype.fill = function(gallons) {
+Car.prototype.fill = function (gallons) {
   if (gallons > 0) {
     this.tank = this.tank + gallons;
   }
@@ -101,7 +109,9 @@ function Baby(name, age, favoriteToy) {
 }
 
 Baby.prototype = Object.create(Person.prototype);
-Baby.prototype.play = function() { return `Playing with ${this.favoriteToy}`; };
+Baby.prototype.play = function () {
+  return `Playing with ${this.favoriteToy}`;
+};
 
 /*
   TASK 4
@@ -123,18 +133,18 @@ Baby.prototype.play = function() { return `Playing with ${this.favoriteToy}`; };
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
-if (typeof exports !== 'undefined') {
-  module.exports = module.exports || {}
+if (typeof exports !== "undefined") {
+  module.exports = module.exports || {};
   if (Airplane) {
-    module.exports.Airplane = Airplane
+    module.exports.Airplane = Airplane;
   }
   if (Person) {
-    module.exports.Person = Person
+    module.exports.Person = Person;
   }
   if (Car) {
-    module.exports.Car = Car
+    module.exports.Car = Car;
   }
   if (Baby) {
-    module.exports.Baby = Baby
+    module.exports.Baby = Baby;
   }
 }
